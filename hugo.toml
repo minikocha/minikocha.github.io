@@ -1,3 +1,151 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL      = 'https://minikocha.github.io/'
+languageCode = 'en'
+title        = 'つれづれなるままに'
+theme        = 'stack'
+
+copyright = 'minikocha'
+defaultContentLanguage = 'en'
+hasCJKLanguage = true
+
+[permalinks]
+  post = '/p/:slug/'
+  page = '/:slug/'
+
+[params]
+  # Relative path from the static/ directory
+  #favicon           = ''
+  featuredImageField = 'image'
+  mainSections       = ['post']
+  rssFullContent     = true
+
+  [params.footer]
+    since       = 2025
+    #customText = ''
+
+  [params.dateFormat]
+    lastUpdated = '2006/01/02 15:04 MST'
+    published   = '2006/01/02'
+
+  [params.sidebar]
+    #emoji    = ''                  # Set an emoji to display under the avatar image
+    subtitle = 'love your badgies.'
+    [params.sidebar.avatar]
+      enabled = true
+      local   = true
+      src     = 'avatar.jpeg'
+
+  [params.article]
+    math        = false
+    toc         = true
+    readingTime = true
+      [params.article.license]
+        enabled = false
+        #default = 'Licensed under xxxxx'
+
+  [params.comments]
+    enabled  = true
+    provider = 'giscus'
+    [params.comments.giscus]
+      repo             = 'minikocha/minikocha.github.io'
+      repoID           = 'R_kgDOP4As9w'
+      category         = 'General'
+      categoryID       = 'DIC_kwDOP4As984CwEEs'
+      mapping          = 'pathname'
+      #strict           = 0
+      reactionsEnabled = 1
+      emitMetadata     = 0
+      #inputPosition    = 'bottom'
+      #lightTheme       = ''
+      #darkTheme        = ''
+      lang             = 'en'
+
+  [[params.widgets.homepage]]
+    type = 'search'
+  [[params.widgets.homepage]]
+    type = 'archives'
+    [params.widgets.homepage.params]
+      limit = 5
+  [[params.widgets.homepage]]
+    type = 'categories'
+    [params.widgets.homepage.params]
+      limit = 10
+  [[params.widgets.homepage]]
+    type = 'tag-cloud'
+    [params.widgets.homepage.params]
+      limit = 10
+  [[params.widgets.page]]
+    type = 'toc'
+
+  #[params.opengraph.twitter]
+  #  #Your Twitter username
+  #  site = ''
+  #  # Available values: summary, summary_large_image
+  #  card = 'summary_large_image'
+
+  #[params.defaultImage.opengraph]
+  #  enabled = false
+  #  local   = false
+  #  src     = ''
+
+  [params.colorScheme]
+    toggle  = true    # Display toggle
+    default = 'auto'  # Available values: auto, light, dark
+
+  [params.imageProcessing.cover]
+    enabled = true
+  [params.imageProcessing.content]
+    enabled = true
+
+### Custom menu
+### See https://stack.jimmycai.com/config/menu
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+[menu]
+  main = []
+
+  [[menu.social]]
+    identifier = 'github'
+    name       = 'GitHub'
+    url        = 'https://github.com/minikocha'
+    [menu.social.params]
+      icon = 'brand-github'
+  [[menu.social]]
+    identifier = 'twitter'
+    name       = 'Twitter'
+    url        = 'https://x.com/minikocha'
+    [menu.social.params]
+      icon = 'brand-twitter'
+
+[related]
+  includeNewer = true
+  threshold    = 60
+  toLower      = false
+  [[related.indices]]
+    name   = 'tags'
+    weight = 100
+  [[related.indices]]
+    name   = 'categories'
+    weight = 200
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block  = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)']]
+
+[markup.goldmark.renderer]
+  ## Set to true if you have HTML content inside Markdown
+  unsafe = true
+
+[markup.tableOfContents]
+  endLevel   = 4
+  ordered    = true
+  startLevel = 2
+
+[markup.highlight]
+  noClasses          = false
+  codeFences         = true
+  guessSyntax        = true
+  lineNoStart        = 1
+  lineNos            = true
+  lineNumbersInTable = true
+  tabWidth           = 4
