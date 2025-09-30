@@ -7,6 +7,10 @@ copyright = 'minikocha'
 defaultContentLanguage = 'en'
 hasCJKLanguage = true
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [permalinks]
   post = '/p/:slug/'
   page = '/:slug/'
