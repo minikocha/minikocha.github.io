@@ -118,6 +118,12 @@ hasCJKLanguage = true
     url        = 'https://x.com/minikocha'
     [menu.social.params]
       icon = 'brand-twitter'
+  [[menu.social]]
+    identifier = 'zenn'
+    name       = 'Zenn'
+    url        = 'https://zenn.dev/minikocha'
+    [menu.social.params]
+      icon = 'link'
 
 [related]
   includeNewer = true
