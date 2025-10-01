@@ -9,17 +9,13 @@ add:
 
 .PHONY: clean
 clean:
-	@if [ -d public ]; then \
-	  for o in $$(ls public); do \
-	    rm -rf ./public/$${o} >/dev/null; \
-	  done; \
-	fi; \
+	@for o in $$(ls public 2>/dev/null); do \
+	  rm -rf ./public/$${o} >/dev/null; \
+	done; \
 	\
-	if [ -d resources ]; then \
-	  for o in $$(ls resources); do \
-	    rm -rf ./resources/$${o} >/dev/null; \
-	  done; \
-	fi; \
+	for o in $$(ls resources 2>/dev/null); do \
+	  rm -rf ./resources/$${o} >/dev/null; \
+	done; \
 	\
 	if [ -f .hugo_build.lock ]; then \
 	  rm -f .hugo_build.lock >/dev/null; \
