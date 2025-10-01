@@ -22,7 +22,7 @@ clean:
 	fi; \
 	\
 	if [ -f .hugo_build.lock ]; then \
-	  rm -f -f .hugo_build.lock >/dev/null; \
+	  rm -f .hugo_build.lock >/dev/null; \
 	fi
 
 .PHONY: preview
